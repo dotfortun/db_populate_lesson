@@ -1,6 +1,5 @@
 import csv
 
-from flask_sqlalchemy import SQLAlchemy
 from main import app, db
 from models import User
 
@@ -10,7 +9,6 @@ users = []
 
 with open('src/users.csv', 'rt') as csv_file:
     reader = csv.DictReader(csv_file)
-    print(next(reader))
     for row in tqdm(reader):
         u = User(
             email=row['email'],
