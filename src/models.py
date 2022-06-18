@@ -26,3 +26,13 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+
+class Lesson(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    word = db.Column(db.String(120), unique=False, nullable=True)
+    phonetic = db.Column(db.String(120), unique=False, nullable=True)
+    mandarin = db.Column(db.String(120), unique=False, nullable=True)
+    phoneticM = db.Column(db.String(120), unique=False, nullable=True)
+    images = db.Column(db.String(120), unique=False, nullable=True)
+    part_of_speech = db.Column(db.String(120), unique=False, nullable=True)
